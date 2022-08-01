@@ -1,0 +1,118 @@
+:root {
+    --color-navbar: rgb(235, 229, 229);
+    --color-bg: rgb(243, 226, 243);;
+    --color-accent: #e6c5e8;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    background-color: #f7ecea;
+    padding: 30px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.navbar__list--first {
+    display: flex;
+    gap: 3px;
+    z-index: 1;
+}
+
+.navbar__list--second {
+    z-index: 2;
+}
+
+.navbar__list--third {
+    top: calc(100% - 12px - 12px - 27.6px);
+    left: calc(100% - 3px);
+    z-index: 3;
+}
+
+.navbar__link {
+    text-decoration: none;
+    display: flex;
+    gap: 1em;
+    padding: 0.5em 1em;
+    letter-spacing: 0.2em;
+    transition: 0.2s;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.navbar li ul {
+    /*display: none;*/
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    position: absolute;
+    min-width: calc(216px + 48px);
+    box-shadow: -5px 5px 10px black;
+}
+
+.navbar ul > li:hover > ul {
+    /*display: block;*/
+    clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+
+    background-color: var(--color-bg);
+}
+
+.navbar__list--first > li > a:hover {
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+.navbar__list--first > li > a {
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+    background-color: var(--color-navbar);
+}
+
+.navbar a:hover {
+    background-color: var(--color-accent);
+}
+
+.navbar__span {
+    color: transparent;
+    background: linear-gradient(
+        #fd004c 16.7%,
+        #fe9000 16.7%,
+        #fe9000 33.4%,
+        #fff020 33.4%,
+        #fff020 50.1%,
+        #3edf4b 50.1%,
+        #3edf4b 66.8%,
+        #3363ff 66.8%,
+        #3363ff 83.5%,
+        #b102b7 83.5%
+    );
+    -webkit-text-stroke: 0.02em #fff;
+    -webkit-background-clip: text;
+    animation: rainbow 50s linear infinite;
+}
+
+@keyframes rainbow{
+    100%{
+        background-position: 0 50em;
+    }
+}
+
+.navbar__link--active {
+    text-decoration: underline;
+}
+
